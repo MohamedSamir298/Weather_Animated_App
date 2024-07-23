@@ -3,6 +3,11 @@
 
 The Weather App is a cross-platform mobile application built using Flutter and Dart, demonstrating a solid understanding of modern mobile app development principles. This project showcases proficiency in creating applications with the MVVM (Model-View-ViewModel) architecture, making API calls, and integrating device location services. The app provides real-time weather updates for any city worldwide or based on the user's current location, all presented with a simple and intuitive user interface.
 
+## Latest Update
+
+* Using Lottie animation to show the weather condition
+* Refactor Ui for better experience
+
 ## Features
 
 * City-Based Weather Search: Users can enter any city name to receive real-time weather information, including temperature, humidity, wind speed, and a brief weather description.
