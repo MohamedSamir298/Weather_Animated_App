@@ -7,7 +7,7 @@ class WeatherViewModel with ChangeNotifier {
   late WeatherData _currentWeather;
   bool _isLoading = false;
   String? _errorMessage;
-
+  bool isSearchOpen = false;
   WeatherData get currentWeather => _currentWeather;
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
@@ -28,7 +28,7 @@ class WeatherViewModel with ChangeNotifier {
 
   Future<void> fetchWeatherByLocation() async {
     _isLoading = true;
-    notifyListeners();
+    //notifyListeners();
     try {
       Location location = Location();
 
@@ -60,6 +60,17 @@ class WeatherViewModel with ChangeNotifier {
     } finally {
       _isLoading = false;
       notifyListeners();
+    }
+  }
+  String getWeatherAnimation() {
+    if (_currentWeather.weather![0].main == 'Clouds') {
+      return 'assets/fog.json';
+    } else if (_currentWeather.weather![0].main == 'Rain') {
+      return 'assets/rain.json';
+    } else if (_currentWeather.weather![0].main == 'Thunderstorm') {
+      return 'assets/storm.json';
+    } else {
+      return 'assets/sunny.json';
     }
   }
 }
